@@ -4,7 +4,7 @@ public class Black : Piece
 {
     public override void InHole()
     {
-        if(pieceRigidBody.velocity.magnitude <= 0.7f)
+        if(pieceRigidBody.velocity.magnitude <= 2f)
         {
             // Increase Score
             Debug.Log("Scored");
@@ -17,6 +17,9 @@ public class Black : Piece
 
             // Disabling Gameobject
             this.gameObject.SetActive(false);
+
+            // Playing the Sound effect
+            AudioManager.instance.ScoreHit();
         }
     }
 }

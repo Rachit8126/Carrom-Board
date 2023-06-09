@@ -34,6 +34,9 @@ public class ShootAI : MonoBehaviour
         // adding the sccaled force in the random direction we calculated
         strikerRigidBody.AddForce(direction * forceScale);
 
+        // Playing the striker hit sound effect
+        AudioManager.instance.StrikerHit();
+
         // disabling components for next turn
         this.GetComponent<Collider2D>().isTrigger = false;
 

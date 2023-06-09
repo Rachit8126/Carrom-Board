@@ -15,5 +15,11 @@ public class Striker : Piece
     {
         // if the striker goes in to hole, reset it.
         resetPositionAfterShot.ResetStriker(0.5f);
+
+        if(this.GetComponent<Rigidbody>().velocity.magnitude <= 1.5f)
+        {
+            // Playing the Sound effect
+            AudioManager.instance.ScoreHit();
+        }
     }
 }

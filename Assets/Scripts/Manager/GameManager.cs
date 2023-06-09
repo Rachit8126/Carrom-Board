@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -54,5 +55,13 @@ public class GameManager : MonoBehaviour
             // Updating in UI
             player2ScoreText.text = "Score: " + Player2score.ToString();
         }
+    }
+
+    /// <summary>
+    /// Restarts the current scene
+    /// </summary>
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
     }
 }

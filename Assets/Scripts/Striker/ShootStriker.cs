@@ -56,6 +56,9 @@ public class ShootStriker : MonoBehaviour
             Vector2 force = Vector2.ClampMagnitude(pullDirection * forceScale, maxForce);
             strikerRigidBody.AddForce(force);
 
+            // Playing the striker hit sound
+            AudioManager.instance.StrikerHit();
+
             // disabling slider to disbale controlled movement of striker
             strikerControllerSlider.interactable = false;
 
